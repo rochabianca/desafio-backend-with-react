@@ -8,30 +8,29 @@ export default class Messages extends React.Component {
     super();
 
     this.state = {
-      messages: []
+      message: []
     };
   }
 
   componentDidMount() {
-    const { token } = this.props;
+    const { token, id } = this.props;
     let currentComponent = this;
-    axios.get(`/api/v1/messages?token=${token}`).then(function(data) {
+    axios.get(`/api/v1/messages/${id}?token=${token}`).then(function(data) {
       currentComponent.setState({
-        messages: data.data
+        message: data.data
       });
     });
   }
 
   render() {
-    const { messages } = this.state;
-    if (messages) {
+    const { message } = this.state;
+    console.log(message);
+    if (message) {
       return (
         <div>
-          {messages.map(message => (
-            <div key={message.id}>
-              <Message message={message} />
-            </div>
-          ))}
+          <h1>{message.title}</h1>
+          <span>From: {message.from}</span>
+          <p>{message.content}</p>
         </div>
       );
     } else {

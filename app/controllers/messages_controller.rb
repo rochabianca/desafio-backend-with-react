@@ -24,11 +24,15 @@ class MessagesController < ApplicationController
 
   #index checks if user has master permission
   def index
-    @messages = current_user.master? ? Message.master_messages.ordered : Message.sent_to(current_user).ordered
+    # @messages = current_user.master? ? Message.master_messages.ordered : Message.sent_to(current_user).ordered
+    @token = ENV['token']
   end
 
   # shows content of the message
   def show
+    @id = params[:id]
+    @token = ENV['token']
+
     @message = Message.find(params[:id])
     if @message.unread? && current_user == @message.receiver #only set to read if current_user is the receiver of the message
       @message.read!
