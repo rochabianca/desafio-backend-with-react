@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'webpacker', '~> 3.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,7 +46,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'faker', '~> 1.7'
   gem 'pry'
   gem 'better_errors'
   gem 'rails-controller-testing'
