@@ -13,7 +13,7 @@ html
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Muli:400,300"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-
+    = javascript_pack_tag 'application'
 
   body
     .wrapper
@@ -22,5 +22,6 @@ html
             = render 'layouts/messages'
             = render 'layouts/navbar'
             .content data-unread="#{user_messages}" data-archived="#{archived_count}"
+                <div id="app"></div>
                 = yield
             = render 'layouts/footer'
