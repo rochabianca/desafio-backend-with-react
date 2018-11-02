@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Message from "./Message";
 import axios from "axios";
+import secrets from "../secrets";
 
-export default class Messages extends React.Component {
+export default class ShowMessage extends React.Component {
   constructor() {
     super();
 
@@ -13,7 +13,8 @@ export default class Messages extends React.Component {
   }
 
   componentDidMount() {
-    const { token, id } = this.props;
+    const { id } = this.props;
+    const { token } = secrets;
     let currentComponent = this;
     axios.get(`/api/v1/messages/${id}?token=${token}`).then(function(data) {
       currentComponent.setState({
@@ -29,7 +30,8 @@ export default class Messages extends React.Component {
       return (
         <div>
           <h1>{message.title}</h1>
-          <span>From: {message.from}</span>
+          <p>From: {message.from}</p>
+          <p>On: {message.created_at}</p>
           <p>{message.content}</p>
         </div>
       );
@@ -40,5 +42,5 @@ export default class Messages extends React.Component {
 }
 
 document.addEventListener("turbolinks:load", () => {
-  ReactDOM.render(<Messages />, document.getElementById("app"));
+  ReactDOM.render(<ShowMessage />, document.getElementById("app").innerHTML);
 });

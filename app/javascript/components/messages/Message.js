@@ -4,10 +4,12 @@ const Message = props => {
   const { message } = props;
 
   return (
-    <div>
-      <h3>{message.title}</h3>
-      <p>{message.content}</p>
-    </div>
+    <a href={`/messages/${message.id}`}>
+      <div>
+        <h3>{message.title}</h3>
+        <p>{message.content}</p>
+      </div>
+    </a>
   );
 };
 
