@@ -1,0 +1,24 @@
+@import "variables";
+
+.flashMessages {
+  text-align: center;
+  position: relative;
+  background: $white;
+}
+
+.flashMessages__box {
+  position: absolute;
+  z-index: 4;
+  padding: 10px;
+  background: $white;
+  width: 100%;
+
+  &.danger {
+    background: $danger;
+    color: $white;
+  }
+  &.notice {
+    background: $success;
+    color: $white;
+  }
+}
