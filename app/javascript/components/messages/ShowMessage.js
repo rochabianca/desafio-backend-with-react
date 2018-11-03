@@ -73,7 +73,3 @@ export default class ShowMessage extends React.Component {
     }
   }
 }
-
-document.addEventListener("turbolinks:load", () => {
-  ReactDOM.render(<ShowMessage />, document.getElementById("app").innerHTML);
-});

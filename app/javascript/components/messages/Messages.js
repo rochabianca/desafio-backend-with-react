@@ -40,7 +40,3 @@ export default class Messages extends React.Component {
     }
   }
 }
-
-document.addEventListener("turbolinks:load", () => {
-  ReactDOM.render(<Messages />, document.getElementById("app").innerHTML);
-});
