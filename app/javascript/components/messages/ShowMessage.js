@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import secrets from "../secrets";
 import moment from "moment";
+import Secrets from "../Secrets";
 
 export default class ShowMessage extends React.Component {
   constructor() {
@@ -23,7 +23,7 @@ export default class ShowMessage extends React.Component {
       receiver_name,
       receiver_email
     } = this.props;
-    const { token } = secrets;
+    const { token } = Secrets;
     let currentComponent = this;
     axios.get(`/api/v1/messages/${id}?token=${token}`).then(function(data) {
       currentComponent.setState({

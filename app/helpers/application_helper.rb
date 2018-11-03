@@ -20,6 +20,6 @@ module ApplicationHelper
   end
 
   def user_token
-    current_user.master? ? ("#{Figaro.env.api_key}&permission=master") : (current_user.token)
+    current_user.master? ? ("#{Figaro.env.api_key}&permission=master") : (current_user.token.to_s)
   end
 end

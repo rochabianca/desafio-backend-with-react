@@ -1,7 +1,8 @@
-let key = document.getElementById("id");
+const key = localStorage.getItem("token");
+console.log(key);
 
 const secrets = {
-  token: key.dataset.key
+  token: key
 };
 
 export default secrets;

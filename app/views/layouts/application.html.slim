@@ -14,6 +14,11 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application'
+    javascript:
+      var key = "#{user_token}"
+      key = key.replace(';', '&') 
+      localStorage.setItem('token', key)
+              
 
   body
     .wrapper
@@ -25,4 +30,4 @@ html
                 <div id="app"></div>
                 = yield
             = render 'layouts/footer'
-            #id data-key="#{user_token}"
+            
