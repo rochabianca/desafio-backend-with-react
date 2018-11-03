@@ -36,7 +36,7 @@ class Message < ApplicationRecord
         id: message.id,
         title: message.title,
         from: message.sender.name,
-        to: message.receiver,
+        to: message.receiver.name,
         status: message.status,
         archived: message.archived,
         response: message.response,
