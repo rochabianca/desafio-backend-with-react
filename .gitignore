@@ -27,4 +27,3 @@
 # Ignore application configuration
 /config/application.yml
 /old_ones
-/app/javascript/components/secrets.js

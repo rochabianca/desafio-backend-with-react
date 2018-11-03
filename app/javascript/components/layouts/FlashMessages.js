@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class FlashMessages extends Component {
   render() {
     const { flash } = this.props;
-    console.log(flash);
 
     if (flash.length > 0) {
       return (

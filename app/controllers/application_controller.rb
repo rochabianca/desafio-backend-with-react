@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
+
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end
@@ -12,7 +13,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     messages_path
   end
-
   rescue_from CanCan::AccessDenied do |exception|
     flash.now[:danger] = "Acesso negado. Você não está autorizado a acessar essa página"
     redirect_to messages_path, flash: {danger: "Acesso negado. Você não está autorizado a acessar essa página"}

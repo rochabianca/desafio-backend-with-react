@@ -18,4 +18,8 @@ module ApplicationHelper
   def users_count
     User.normal.size
   end
+
+  def user_token
+    current_user.master? ? ("#{Figaro.env.api_key}&permission=master") : (current_user.token)
+  end
 end

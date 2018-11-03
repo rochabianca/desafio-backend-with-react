@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Message from "./Message";
 import axios from "axios";
-import secrets from "../secrets";
+import secrets from "../Secrets";
 
 export default class Messages extends React.Component {
   constructor() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import secrets from "../secrets";
+import secrets from "../Secrets";
 import Message from "./Message";
 
 export default class SentMessages extends Component {
