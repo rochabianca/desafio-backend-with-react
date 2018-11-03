@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import getToken from "../Secrets";
+import secrets from "../Secrets";
 
 export default class ArchivedMessages extends Component {
   state = {
@@ -8,15 +8,13 @@ export default class ArchivedMessages extends Component {
   };
 
   componentDidMount() {
-    const token = getToken();
+    const { token } = secrets;
     let currentComponent = this;
-    axios
-      .get(`/api/v1/messages/sent?apiKey=${apiKey}&permission=master`)
-      .then(function(data) {
-        currentComponent.setState({
-          messages: data.data
-        });
+    axios.get(`/api/v1/messages/archived?token=${token}`).then(function(data) {
+      currentComponent.setState({
+        messages: data.data
       });
+    });
   }
 
   render() {
