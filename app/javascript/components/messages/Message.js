@@ -6,6 +6,7 @@ const Message = props => {
   return (
     <a href={`/messages/${message.id}`}>
       <div>
+        <h3>{message.from}</h3>
         <h3>{message.title}</h3>
         <p>{message.content}</p>
       </div>

@@ -28,4 +28,22 @@ class Message < ApplicationRecord
       end
     end
   end
+
+  def self.with_users(messages)
+    message_with_sender = []
+    messages.each do |message|
+      item = {
+        id: message.id,
+        title: message.title,
+        from: message.sender.name,
+        to: message.receiver,
+        status: message.status,
+        archived: message.archived,
+        response: message.response,
+        created_at: message.created_at 
+      }
+      message_with_sender << item
+    end
+    message_with_sender
+  end
 end

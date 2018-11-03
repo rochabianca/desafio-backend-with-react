@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       resources :users, only: [:update,:index] do
         member do
           get 'messages'
+          get 'show'
         end
       end
 

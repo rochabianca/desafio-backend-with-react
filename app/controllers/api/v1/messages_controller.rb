@@ -5,8 +5,9 @@ class Api::V1::MessagesController < ApplicationController
 
   def index
     @messages = params[:permission] == 'master' ? Message.master_messages.ordered : Message.sent_to(@user).ordered
+    @messages_with_users = Message.with_users(@messages)
     respond_to do |format|
-      format.json { render :json => @messages }
+      format.json { render :json => @messages_with_users }
     end
   end
 

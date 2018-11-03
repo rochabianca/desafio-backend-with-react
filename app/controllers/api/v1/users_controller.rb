@@ -10,6 +10,14 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.json { render :json => @user}
+    end
+  end
+
   def messages
     @user = User.find(params[:id])
     @sent = Message.sent_from(@user)
