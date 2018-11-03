@@ -2,37 +2,70 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import secrets from "../secrets";
+import moment from "moment";
 
 export default class ShowMessage extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      message: []
+      message: [],
+      sender: {},
+      receiver: {}
     };
   }
 
   componentDidMount() {
-    const { id } = this.props;
+    const {
+      id,
+      sender_name,
+      sender_email,
+      receiver_name,
+      receiver_email
+    } = this.props;
     const { token } = secrets;
     let currentComponent = this;
     axios.get(`/api/v1/messages/${id}?token=${token}`).then(function(data) {
       currentComponent.setState({
-        message: data.data
+        message: data.data,
+        sender: {
+          name: sender_name,
+          email: sender_email
+        },
+        receiver: {
+          name: receiver_name,
+          email: receiver_email
+        }
       });
     });
   }
 
   render() {
-    const { message } = this.state;
-    console.log(message);
-    if (message) {
+    const { message, sender, receiver } = this.state;
+    if (message && sender && receiver) {
       return (
-        <div>
-          <h1>{message.title}</h1>
-          <p>From: {message.from}</p>
-          <p>On: {message.created_at}</p>
-          <p>{message.content}</p>
+        <div className="showMessage">
+          <h1 className="showMessage__subject">{message.title}</h1>
+
+          <div className="showMessage__header">
+            <div className="showMessage__info">
+              <div className="showMessage__info__sender">
+                <b>{sender.name}</b> <span>{"<" + sender.email + ">"}</span>
+              </div>
+              <div className="showMessage__info__receiver">
+                To {receiver.name}{" "}
+                <div className="showMessage__info__box">{receiver.email}</div>
+              </div>
+            </div>
+
+            <p>
+              {moment(message.created_at)
+                .locale("pt-br")
+                .format("LL")}
+            </p>
+          </div>
+
+          <div className="showMessage__content">{message.content}</div>
         </div>
       );
     } else {

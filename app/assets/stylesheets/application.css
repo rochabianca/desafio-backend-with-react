@@ -10,10 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require paper-dashboard/assets/css/bootstrap.min
  *= require paper-dashboard/assets/css/animate.min
  *= require paper-dashboard/assets/css/paper-dashboard
  *= require paper-dashboard/assets/css/themify-icons
  *= require_self
+ *= require_tree .
  */

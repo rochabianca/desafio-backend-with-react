@@ -18,7 +18,7 @@ html
   body
     .wrapper
         = render 'layouts/sidebar'
-        .main-panel
+        .main-panel.main-panel--white
             = render 'layouts/messages'
             = render 'layouts/navbar'
             .content data-unread="#{user_messages}" data-archived="#{archived_count}"
