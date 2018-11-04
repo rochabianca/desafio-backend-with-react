@@ -4,7 +4,7 @@ import logo from "../../images/logo.png";
 
 export default class Sidebar extends Component {
   render() {
-    const { user, unread_messages, master, route } = this.props;
+    const { unread_messages, master, route } = this.props;
 
     return (
       <div className="sidebar menu" data-background-color="#7f7fd5">

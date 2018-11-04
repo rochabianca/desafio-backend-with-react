@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 export default class Navbar extends Component {
   render() {
-    const { id } = this.props;
+    const { id, user, route } = this.props;
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar ">
         <div className="container-fluid">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle">
@@ -13,16 +13,15 @@ export default class Navbar extends Component {
               <span className="icon-bar bar2" />
               <span className="icon-bar bar3" />
             </button>
-            <a href="#" className="navbar-brand">
-              Mensagens
+            <a href="#" className="navbar-brand navbar__title">
+              {route}
             </a>
           </div>
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
                 <a href="#" data-toggle="dropdown" className="dropdown-toggle">
-                  <i className="fa fa-gear" />
-                  <p>Opções</p>
+                  <p className="navbar__title">{user}</p>
                   <b className="caret" />
                 </a>
                 <ul className="dropdown-menu">
