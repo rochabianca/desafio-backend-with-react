@@ -36,7 +36,7 @@ export default class NewMessage extends Component {
             title: "",
             content: ""
           });
-          history.push("/messages");
+          window.location = "/messages";
         });
     }
   };

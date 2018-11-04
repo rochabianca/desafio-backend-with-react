@@ -1,0 +1,78 @@
+@import "variables";
+
+.login {
+  background: $white;
+}
+
+.login__max-height {
+  height: 100vh;
+}
+
+.login__bg {
+  background: $gradient;
+}
+
+.login__info {
+  margin-top: 30%;
+  text-align: center;
+  color: $white;
+
+  .login__logo {
+    text-align: center;
+    font-size: 42px;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+}
+
+.login__content {
+  margin-top: 45%;
+  h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: $black;
+  }
+}
+
+.login__form__field {
+  margin-bottom: 10px;
+  label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: $dark-gray;
+    margin-bottom: 5px;
+  }
+
+  input {
+    background: $white;
+    color: $black;
+    border: none !important;
+    border-bottom: 2px solid $light-gray !important;
+
+    &:focus {
+      border-bottom: 2px solid $success !important;
+    }
+  }
+}
+
+.login__button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: $purple;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login__form__links {
+  margin-top: 10px;
+  font-size: 14px;
+  a {
+    color: $dark-purple;
+  }
+}
