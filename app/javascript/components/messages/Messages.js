@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Message from "./Message";
 import axios from "axios";
 import secrets from "../Secrets";
