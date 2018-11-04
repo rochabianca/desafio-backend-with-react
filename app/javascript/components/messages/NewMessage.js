@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { render } from "react-dom";
 import InputGroup from "./InputGroup";
 import Secrets from "../Secrets";
 
@@ -13,7 +14,7 @@ export default class NewMessage extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
+    const { history } = this.props;
     const { receiver_email, title, content } = this.state;
     const { token } = Secrets;
     const currentThis = this;
@@ -35,13 +36,14 @@ export default class NewMessage extends Component {
             title: "",
             content: ""
           });
-          window.location = "/";
+          history.push("/messages");
         });
     }
   };
 
   render() {
     const { receiver_email, title, content } = this.state;
+
     return (
       <div className="container-fluid">
         <div className="row">

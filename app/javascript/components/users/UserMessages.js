@@ -3,7 +3,7 @@ import Secrets from "../Secrets";
 import axios from "axios";
 import Message from "./Message";
 
-export default class Messages extends Component {
+export default class UserMessages extends Component {
   state = {
     received: [],
     sent: []

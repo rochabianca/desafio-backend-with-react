@@ -27,3 +27,5 @@
 # Ignore application configuration
 /config/application.yml
 /old_ones
+app/javascript/packs/index.js
+app/javascript/components/routes.js
