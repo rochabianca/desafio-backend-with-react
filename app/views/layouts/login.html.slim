@@ -12,6 +12,8 @@ html
 
     = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Muli:400,300"
+    = javascript_pack_tag 'application'
+
 
 
 
@@ -20,4 +22,3 @@ html
         .main-panel.main-panel--white style='width:100%;'
             = render 'layouts/messages'
             = yield
-            = render 'layouts/footer'

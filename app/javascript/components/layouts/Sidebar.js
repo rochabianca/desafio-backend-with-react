@@ -1,40 +1,38 @@
 import React, { Component } from "react";
 import SidebarItem from "./SidebarItem";
+import logo from "../../images/logo.png";
 
 export default class Sidebar extends Component {
   render() {
     const { user, unread_messages, master, route } = this.props;
 
     return (
-      <div
-        className="sidebar"
-        data-active-color="danger"
-        data-background-color="white"
-      >
-        <div className="sidebar-wrapper">
+      <div className="sidebar menu" data-background-color="#7f7fd5">
+        <div className="sidebar-wrapper menu__bg">
           <div className="logo">
-            <a className="simple-text" href="/messages">
-              AgendaMail
+            <a className="menu__logo" href="/messages">
+              <div>
+                <img src={logo} alt="" /> AgendaMail
+              </div>
             </a>
-            <span>{user}</span>
           </div>
           <ul className="nav">
             <SidebarItem
               route="/messages/new"
               currentRoute={route}
-              icon="fa fa-pencil"
+              icon="ion-ios-compose-outline"
               name="Escrever"
             />
             <SidebarItem
               route="/messages/sent"
               currentRoute={route}
-              icon="fa fa-envelope-open"
+              icon="ion-ios-paperplane-outline"
               name="Enviadas"
             />
             <SidebarItem
               route="/messages"
               currentRoute={route}
-              icon="fa fa-envelope-o"
+              icon="ion-ios-email-outline"
               name="Mensagens"
               unread={unread_messages}
             />
@@ -43,13 +41,13 @@ export default class Sidebar extends Component {
                 <SidebarItem
                   route="/archived"
                   currentRoute={route}
-                  icon="fa fa-archive"
+                  icon="ion-ios-filing-outline"
                   name="Arquivadas"
                 />
                 <SidebarItem
                   route="/users"
                   currentRoute={route}
-                  icon="fa fa-user"
+                  icon="ion-ios-people-outline"
                   name="Usuarios"
                 />
               </React.Fragment>

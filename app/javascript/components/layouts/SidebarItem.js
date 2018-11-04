@@ -6,11 +6,11 @@ const SidebarItem = props => {
   return (
     <li
       className={classnames({
-        hide_sidebar: route !== currentRoute,
-        "active hide_sidebar": route === currentRoute
+        menu__item: route !== currentRoute,
+        "active menu__item": route === currentRoute
       })}
     >
-      <a href={route}>
+      <a className="menu__item__text" href={route}>
         <i className={icon} />
         <p>
           {name} {unread ? "(" + unread + ")" : null}

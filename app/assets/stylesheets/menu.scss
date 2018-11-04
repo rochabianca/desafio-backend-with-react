@@ -1,0 +1,48 @@
+@import "variables";
+
+.menu {
+  overflow: hidden;
+  overflow-y: auto;
+  background: none;
+}
+.menu__bg {
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7);
+
+  .logo {
+    margin: 0;
+    border-bottom: 2px solid $success;
+  }
+}
+
+.menu__logo {
+  text-align: center;
+  color: $white;
+  font-size: 20px;
+  font-weight: 600;
+
+  &:hover {
+    color: $white;
+  }
+
+  img {
+    width: 30px;
+  }
+}
+.menu__item {
+  .menu__item__text {
+    &::before,
+    &::after {
+      border-right: 17px solid $white;
+    }
+    i,
+    p {
+      color: $white;
+    }
+    &:hover {
+      i,
+      p {
+        color: $success;
+      }
+    }
+  }
+}
