@@ -15,8 +15,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application'
     javascript:
-      var key = "#{user_token}"
-      key = key.replace(';', '&') 
+      var key = "#{ raw user_token}"
       localStorage.setItem('token', key)
               
 

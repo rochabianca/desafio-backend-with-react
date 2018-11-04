@@ -28,14 +28,13 @@ class Api::V1::MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
-    @messages_with_users = Message.with_users(@messages)
 
     if @message.receiver == @user || params[:permission] == 'master' || @message.sender == @user
       if @message.unread? && @message.receiver == @user
         @message.read!
       end
       respond_to do |format|
-        format.json { render :json => @messages_with_users }
+        format.json { render :json => @message }
       end
     else
       render json: {erro: 'Não autorizado.'}, status: 401
