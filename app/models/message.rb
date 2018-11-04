@@ -39,6 +39,7 @@ class Message < ApplicationRecord
         to: message.receiver.name,
         status: message.status,
         archived: message.archived,
+        content: message.content,
         response: message.response,
         created_at: message.created_at 
       }

@@ -1,0 +1,40 @@
+@import "variables";
+
+.Message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+  background: #eee;
+  margin-right: -15px;
+  margin-left: -15px;
+  color: $dark-gray;
+  font-weight: 300;
+
+  &.unread {
+    background: $white;
+    font-weight: 600;
+    color: $black;
+  }
+  &:hover {
+    background: #eee;
+  }
+}
+
+.Message__intro {
+  width: 60%;
+  display: flex;
+  align-items: baseline;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
+.Message__header {
+  font-size: 16px;
+}
+
+.Message__preview {
+  font-weight: 300;
+  color: $dark-gray;
+  margin-left: 5px;
+}

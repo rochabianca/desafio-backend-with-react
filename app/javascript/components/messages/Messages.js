@@ -3,13 +3,9 @@ import Message from "./Message";
 import axios from "axios";
 import secrets from "../Secrets";
 export default class Messages extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      messages: []
-    };
-  }
+  state = {
+    messages: []
+  };
 
   componentDidMount() {
     const { token } = secrets;

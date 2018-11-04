@@ -14,7 +14,6 @@ export default class NewMessage extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { history } = this.props;
     const { receiver_email, title, content } = this.state;
     const { token } = Secrets;
     const currentThis = this;

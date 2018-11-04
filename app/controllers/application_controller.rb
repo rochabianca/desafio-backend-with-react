@@ -1,6 +1,7 @@
 require "application_responder"
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  before_action :require_login, except: [:new, :create]
   layout :layout_by_resource
   self.responder = ApplicationResponder
   respond_to :html
@@ -24,6 +25,13 @@ class ApplicationController < ActionController::Base
       'login'
     else
       'application'
+    end
+  end
+
+  def require_login
+    unless user_signed_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to new_user_session_path # halts request cycle
     end
   end
 end
