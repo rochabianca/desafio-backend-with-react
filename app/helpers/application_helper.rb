@@ -42,6 +42,10 @@ module ApplicationHelper
       route_name = 'Mensagens'
     end
 
+    if route_has('/users') and route_has('/edit')
+      route_name = 'Meu Perfil'
+    end 
+
     route_name
   
   end
