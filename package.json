@@ -13,11 +13,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react_ujs": "^2.4.4"
-  },
-  "devDependencies": {
+    "react_ujs": "^2.4.4",
     "webpack-dev-server": "2.11.2"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "./bin/webpack-dev-server"
   }
