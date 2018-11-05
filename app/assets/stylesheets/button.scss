@@ -1,0 +1,16 @@
+@import "variables";
+
+.button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: $purple;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button__success {
+  background: $success;
+}

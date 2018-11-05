@@ -5,21 +5,17 @@ const InputGroup = props => {
   const { label, name, value, placeholder, type, onChange } = props;
 
   return (
-    <div className="row">
-      <div className="col-md-11">
-        <div className="form-group login_input">
-          <label htmlFor={name}>{label}</label>
-          <input
-            className="form-control border-input"
-            placeholder={placeholder}
-            required="required"
-            type={type}
-            name={name}
-            defaultValue={value}
-            onChange={onChange}
-          />
-        </div>
-      </div>
+    <div className="login__form__field NewMessage__space">
+      <label htmlFor={name}>{label}</label>
+      <input
+        className="form-control border-input"
+        placeholder={placeholder}
+        required="required"
+        type={type}
+        name={name}
+        defaultValue={value}
+        onChange={onChange}
+      />
     </div>
   );
 };
