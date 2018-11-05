@@ -32,7 +32,7 @@ development:
   api_key: 'suaApiKey'
 ```
 
-importante criar uma configuração para cada environments ou poderão haver erros nos comandos a seguir
+importante criar uma configuração para cada environment ou poderão haver erros nos comandos a seguir
 
 ```
 bundle exec rake db:create
@@ -40,5 +40,3 @@ bundle exec rake db:migrate
 bundle exec rake db:seed
 rails s
 ```
-
-É possivel rodar o projeto apenas com o comando rails s, porém em desenvolvimento isso trará uma grande queda de performance, pois o rails irá compilar os arquivos de react toda vez que uma mudança for feita.
