@@ -5,16 +5,16 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $light-gray;
-  background: #eee;
+  background: $white;
   margin-right: -15px;
   margin-left: -15px;
-  color: $dark-gray;
-  font-weight: 300;
+  color: $black;
+  font-weight: 600;
 
-  &.unread {
-    background: $white;
-    font-weight: 600;
-    color: $black;
+  &.read {
+    background: #eee;
+    font-weight: 300;
+    color: $dark-gray;
 
     .Message__header {
       font-weight: 600;
@@ -35,6 +35,7 @@
 
 .Message__header {
   font-size: 16px;
+  margin: 15px 0;
 }
 
 .Message__preview {

@@ -21,9 +21,11 @@ class Api::V1::UsersController < ApplicationController
   def messages
     @user = User.find(params[:id])
     @sent = Message.sent_from(@user)
+    @sent_with_users = Message.with_users(@sent)
     @received = Message.sent_to(@user)
+    @received_with_users = Message.with_users(@received)
     respond_to do |format|
-      format.json { render :json => {sent: @sent, received: @received} }
+      format.json { render :json => {sent: @sent_with_users, received: @received_with_users} }
     end
   end
 

@@ -1,0 +1,26 @@
+@import "variables";
+
+.User {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid $light-gray;
+  cursor: pointer;
+
+  &:hover {
+    background: $light-gray;
+  }
+}
+
+.User__name {
+  font-size: 16px;
+  a {
+    color: $black;
+    text-transform: capitalize;
+  }
+}
+
+.User__email {
+  width: 25%;
+  text-align: left;
+}

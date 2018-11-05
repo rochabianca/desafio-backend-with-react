@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Secrets from "../Secrets";
 import axios from "axios";
-import Message from "./Message";
+import Message from "../messages/Message";
 
 export default class UserMessages extends Component {
   state = {
@@ -26,34 +26,30 @@ export default class UserMessages extends Component {
 
     if (sent && received) {
       return (
-        <div className="container-fluid">
+        <div className="container-fluid card__space">
           <div className="row">
             <div className="col-lg-6 col-md-6">
-              <div className="card">
-                <div className="header">
+              <div className="card card__size">
+                <div className="header card__header">
                   <h4 className="title">Recebidas</h4>
                 </div>
-                <div className="content table-responsive table-full-width">
-                  {received.map(message => (
-                    <div key={message.id}>
-                      <Message message={message} />
-                    </div>
-                  ))}
-                </div>
+                {received.map(message => (
+                  <div key={message.id}>
+                    <Message message={message} />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="col-lg-6 col-md-6">
-              <div className="card">
-                <div className="header">
+              <div className="card card__size">
+                <div className="header card__header">
                   <h4 className="title">Enviadas</h4>
                 </div>
-                <div className="content table-responsive table-full-width">
-                  {sent.map(message => (
-                    <div key={message.id}>
-                      <Message message={message} />
-                    </div>
-                  ))}
-                </div>
+                {sent.map(message => (
+                  <div key={message.id}>
+                    <Message message={message} showReceiver={true} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

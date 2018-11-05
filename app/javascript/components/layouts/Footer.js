@@ -8,7 +8,10 @@ export default class Footer extends Component {
           <nav className="pull-left">
             <ul>
               <li>
-                <a href="http://github.com/rochabianca/">
+                <a
+                  className="footer__link"
+                  href="http://github.com/rochabianca/"
+                >
                   Made with <i className="ion-ios-heart-outline" /> by Bianca
                   Rocha
                 </a>

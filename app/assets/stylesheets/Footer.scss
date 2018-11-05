@@ -1,0 +1,11 @@
+@import "variables";
+
+.footer {
+  border-top: 2px solid $success;
+  margin-top: -30px;
+  margin-left: -10px;
+}
+
+.footer__link {
+  color: $purple;
+}

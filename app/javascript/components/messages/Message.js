@@ -9,8 +9,8 @@ const Message = props => {
     <a href={`/messages/${message.id}`}>
       <div
         className={classnames({
-          Message: message.status === "read",
-          "Message unread": message.status !== "read"
+          Message: message.status !== "read",
+          "Message read": message.status === "read"
         })}
       >
         <div className="Message__intro">
@@ -27,7 +27,7 @@ const Message = props => {
         <span className="Message__date">
           {moment(message.created_at)
             .locale("pt-br")
-            .format("LL")}
+            .format("L")}
         </span>
       </div>
     </a>

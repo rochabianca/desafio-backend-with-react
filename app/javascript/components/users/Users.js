@@ -21,21 +21,14 @@ export default class Users extends Component {
 
     if (users) {
       return (
-        <div className="container-fluid">
+        <div className="container-fluid no-margin">
           <div className="row">
             <div className="col-md-12">
-              <div className="card">
-                <div className="header">
-                  <h4 className="title">Caixa de Entrada</h4>
+              {users.map(user => (
+                <div key={user.id}>
+                  <User user={user} />
                 </div>
-                <div className="content table-responsive table-full-width">
-                  {users.map(user => (
-                    <div key={user.id}>
-                      <User user={user} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
