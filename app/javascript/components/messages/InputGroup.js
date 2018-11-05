@@ -1,5 +1,5 @@
 import React from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const InputGroup = props => {
   const { label, name, value, placeholder, type, onChange } = props;
@@ -25,12 +25,12 @@ const InputGroup = props => {
 };
 
 InputGroup.propTypes = {
-  label: propTypes.string.isRequired,
-  name: propTypes.string.isRequired,
-  placeholder: propTypes.string.isRequired,
-  defaultValue: propTypes.string.isRequired,
-  type: propTypes.string.isRequired,
-  onChange: propTypes.func.isRequired
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 InputGroup.defaultProps = {
