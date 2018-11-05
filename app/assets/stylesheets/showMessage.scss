@@ -2,6 +2,8 @@
 
 .showMessage {
   background: $white;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .showMessage__subject {
@@ -9,14 +11,16 @@
   font-weight: bold;
   color: $black;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
 }
 
 .showMessage__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $light-gray;
 }
 
 .showMessage__info__sender {
@@ -49,4 +53,8 @@
       display: block;
     }
   }
+}
+
+.showMessage__content {
+  margin-top: 30px;
 }

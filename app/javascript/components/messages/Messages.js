@@ -26,7 +26,7 @@ export default class Messages extends React.Component {
           {messages.length > 0 ? (
             messages.map(message => (
               <div key={message.id}>
-                <Message message={message} />
+                <Message message={message} preview={true} />
               </div>
             ))
           ) : (

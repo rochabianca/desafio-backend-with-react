@@ -4,44 +4,24 @@ import moment from "moment";
 import Secrets from "../Secrets";
 
 export default class ShowMessage extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      message: [],
-      sender: {},
-      receiver: {}
-    };
-  }
+  state = {
+    message: []
+  };
 
   componentDidMount() {
-    const {
-      id,
-      sender_name,
-      sender_email,
-      receiver_name,
-      receiver_email
-    } = this.props;
+    const { id } = this.props;
     const { token } = Secrets;
     let currentComponent = this;
     axios.get(`/api/v1/messages/${id}?token=${token}`).then(function(data) {
       currentComponent.setState({
-        message: data.data,
-        sender: {
-          name: sender_name,
-          email: sender_email
-        },
-        receiver: {
-          name: receiver_name,
-          email: receiver_email
-        }
+        message: data.data
       });
     });
   }
 
   render() {
-    const { message, sender, receiver } = this.state;
-    if (message && sender && receiver) {
+    const { message } = this.state;
+    if (message) {
       return (
         <div className="showMessage">
           <h1 className="showMessage__subject">{message.title}</h1>
@@ -49,11 +29,14 @@ export default class ShowMessage extends React.Component {
           <div className="showMessage__header">
             <div className="showMessage__info">
               <div className="showMessage__info__sender">
-                <b>{sender.name}</b> <span>{"<" + sender.email + ">"}</span>
+                <b>{message.sender}</b>{" "}
+                <span>{"<" + message.sender_email + ">"}</span>
               </div>
               <div className="showMessage__info__receiver">
-                To {receiver.name}{" "}
-                <div className="showMessage__info__box">{receiver.email}</div>
+                Para {message.receiver}{" "}
+                <div className="showMessage__info__box">
+                  {message.receiver_email}
+                </div>
               </div>
             </div>
 

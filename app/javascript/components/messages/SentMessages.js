@@ -30,7 +30,11 @@ export default class SentMessages extends Component {
                 {messages.length > 0 ? (
                   messages.map(message => (
                     <div key={message.id}>
-                      <Message message={message} showReceiver={true} />
+                      <Message
+                        message={message}
+                        showReceiver={true}
+                        preview={true}
+                      />
                     </div>
                   ))
                 ) : (

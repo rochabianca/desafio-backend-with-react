@@ -29,6 +29,21 @@ class Message < ApplicationRecord
     end
   end
 
+  def self.get_user(message) 
+    item = {
+      id: message.id,
+      title: message.title,
+      sender: message.sender.name,
+      sender_email: message.sender.email,
+      receiver: message.receiver.name,
+      receiver_email: message.receiver.email,
+      archived: message.archived,
+      content: message.content,
+      created_at: message.created_at
+    }
+    item
+  end
+
   def self.with_users(messages)
     message_with_sender = []
     messages.each do |message|

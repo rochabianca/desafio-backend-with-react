@@ -3,7 +3,7 @@ import moment from "moment";
 import classnames from "classnames";
 
 const Message = props => {
-  const { message, showReceiver } = props;
+  const { message, showReceiver, preview } = props;
   return (
     <a href={`/messages/${message.id}`}>
       <div
@@ -20,7 +20,10 @@ const Message = props => {
           )}
 
           <div className="Message__preview">
-            {message.title} <span> - {message.content.substring(0, 20)}</span>
+            {message.title}{" "}
+            {preview ? (
+              <span> - {message.content.substring(0, 20)}</span>
+            ) : null}
           </div>
         </div>
         <span className="Message__date">
