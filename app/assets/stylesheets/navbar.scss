@@ -3,4 +3,25 @@
 .navbar__title {
   font-size: 18px;
   color: $black;
+  margin: 0;
+}
+
+.navbar__line {
+  padding-top: 4px;
+  border-bottom: 2px solid $success;
+}
+
+.navbar__margin {
+  margin: 0 !important;
+  margin-top: 12px !important;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    min-height: 60px;
+  }
+}
+
+.content {
+  padding-top: 0px !important;
 }

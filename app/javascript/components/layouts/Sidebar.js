@@ -18,18 +18,6 @@ export default class Sidebar extends Component {
           </div>
           <ul className="nav">
             <SidebarItem
-              route="/messages/new"
-              currentRoute={route}
-              icon="ion-ios-compose-outline"
-              name="Escrever"
-            />
-            <SidebarItem
-              route="/messages/sent"
-              currentRoute={route}
-              icon="ion-ios-paperplane-outline"
-              name="Enviadas"
-            />
-            <SidebarItem
               route="/messages"
               currentRoute={route}
               icon="ion-ios-email-outline"
@@ -51,7 +39,22 @@ export default class Sidebar extends Component {
                   name="Usuarios"
                 />
               </React.Fragment>
-            ) : null}
+            ) : (
+              <React.Fragment>
+                <SidebarItem
+                  route="/messages/new"
+                  currentRoute={route}
+                  icon="ion-ios-compose-outline"
+                  name="Escrever"
+                />
+                <SidebarItem
+                  route="/messages/sent"
+                  currentRoute={route}
+                  icon="ion-ios-paperplane-outline"
+                  name="Enviadas"
+                />
+              </React.Fragment>
+            )}
           </ul>
         </div>
       </div>

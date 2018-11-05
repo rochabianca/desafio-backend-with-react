@@ -20,15 +20,11 @@ const Message = props => {
             <h3 className="Message__header">{message.from}</h3>
           )}
 
-          <div>
-            {message.title}{" "}
-            <span className="Message__preview">
-              {" "}
-              - {message.content.substring(0, 10)}
-            </span>
+          <div className="Message__preview">
+            {message.title} <span> - {message.content.substring(0, 10)}</span>
           </div>
         </div>
-        <span>
+        <span className="Message__date">
           {moment(message.created_at)
             .locale("pt-br")
             .format("LL")}

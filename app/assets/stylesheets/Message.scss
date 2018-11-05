@@ -25,7 +25,7 @@
   width: 60%;
   display: flex;
   align-items: baseline;
-  padding-left: 15px;
+  padding-left: 25px;
   justify-content: space-between;
 }
 
@@ -34,7 +34,15 @@
 }
 
 .Message__preview {
-  font-weight: 300;
-  color: $dark-gray;
-  margin-left: 5px;
+  width: 40%;
+  text-align: left;
+  span {
+    font-weight: 300;
+    color: $dark-gray;
+    margin-left: 5px;
+  }
+}
+
+.Message__date {
+  padding-right: 25px;
 }

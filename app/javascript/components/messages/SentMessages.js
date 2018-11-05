@@ -25,18 +25,12 @@ export default class SentMessages extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-              <div className="card">
-                <div className="header">
-                  <h4 className="title">Caixa de Entrada</h4>
-                  <span className="message_date" />
-                </div>
-                <div className="content table-responsive table-full-width">
-                  {messages.map(message => (
-                    <div key={message.id}>
-                      <Message message={message} showReceiver={true} />
-                    </div>
-                  ))}
-                </div>
+              <div className="content table-responsive table-full-width">
+                {messages.map(message => (
+                  <div key={message.id}>
+                    <Message message={message} showReceiver={true} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

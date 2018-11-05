@@ -4,8 +4,8 @@ export default class Navbar extends Component {
   render() {
     const { id, user, route } = this.props;
     return (
-      <nav className="navbar ">
-        <div className="container-fluid">
+      <nav className="navbar">
+        <div className="container-fluid navbar__line">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle">
               <span className="sr-only">Toggle navigation</span>
@@ -20,7 +20,11 @@ export default class Navbar extends Component {
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle">
+                <a
+                  href="#"
+                  data-toggle="dropdown"
+                  className="dropdown-toggle navbar__margin"
+                >
                   <p className="navbar__title">{user}</p>
                   <b className="caret" />
                 </a>
