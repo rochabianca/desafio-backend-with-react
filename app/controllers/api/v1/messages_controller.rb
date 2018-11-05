@@ -21,8 +21,9 @@ class Api::V1::MessagesController < ApplicationController
 
   def archived
     @messages = Message.archived.ordered
+    @messages_with_users = Message.with_users(@messages)
     respond_to do |format|
-      format.json { render :json => @messages }
+      format.json { render :json => @messages_with_users }
     end
   end
 
