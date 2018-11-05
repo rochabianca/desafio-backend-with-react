@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import secrets from "../Secrets";
 import Message from "./Message";
+import NothingToShow from "../layouts/NothingToShow";
 
 export default class ArchivedMessages extends Component {
   state = {
@@ -25,11 +26,15 @@ export default class ArchivedMessages extends Component {
       return (
         <div className="container-fluid">
           <div className="row">
-            {messages.map(message => (
-              <div key={message.id}>
-                <Message message={message} />
-              </div>
-            ))}
+            {messages.length > 0 ? (
+              messages.map(message => (
+                <div key={message.id}>
+                  <Message message={message} />
+                </div>
+              ))
+            ) : (
+              <NothingToShow what="Mensagens Arquivadas" />
+            )}
           </div>
         </div>
       );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Secrets from "../Secrets";
 import axios from "axios";
 import User from "./User";
+import NothingToShow from "../layouts/NothingToShow";
 
 export default class Users extends Component {
   state = {
@@ -24,11 +25,16 @@ export default class Users extends Component {
         <div className="container-fluid no-margin">
           <div className="row">
             <div className="col-md-12">
-              {users.map(user => (
-                <div key={user.id}>
-                  <User user={user} />
-                </div>
-              ))}
+              {users.length > 0 ? (
+                users.map(user => (
+                  <div key={user.id}>
+                    <User user={user} />
+                  </div>
+                ))
+              ) : (
+                <NothingToShow what="Usuários" />
+              )}
+              {}
             </div>
           </div>
         </div>

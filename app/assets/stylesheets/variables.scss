@@ -1,4 +1,4 @@
-$danger: red;
+$danger: #d4133d;
 $white: white;
 $black: #2e2e66;
 $dark-gray: #9fb1d3;
@@ -31,45 +31,3 @@ $s-device: 480px;
     }
   }
 }
-
-.no-margin {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.nav .open > a,
-.nav .open > a:focus,
-.nav .open > a:hover {
-  background-color: #fff;
-}
-
-.dropdown-menu > li > a {
-  color: $black;
-}
-
-.navbar-nav > li > .dropdown-menu:before {
-  border-bottom: 11px solid $white !important;
-}
-
-.dropdown-menu {
-  background: $white;
-}
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  background-color: $purple;
-  color: $white;
-}
-
-/* guia de estilo 
-
-links: $dark-purple
-
-
-
-
-
-
-
-
-*/

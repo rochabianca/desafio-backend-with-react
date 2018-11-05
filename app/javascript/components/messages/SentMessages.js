@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import secrets from "../Secrets";
 import Message from "./Message";
+import NothingToShow from "../layouts/NothingToShow";
 
 export default class SentMessages extends Component {
   state = {
@@ -26,11 +27,16 @@ export default class SentMessages extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="content table-responsive table-full-width">
-                {messages.map(message => (
-                  <div key={message.id}>
-                    <Message message={message} showReceiver={true} />
-                  </div>
-                ))}
+                {messages.length > 0 ? (
+                  messages.map(message => (
+                    <div key={message.id}>
+                      <Message message={message} showReceiver={true} />
+                    </div>
+                  ))
+                ) : (
+                  <NothingToShow what="Mensagens Enviadas" />
+                )}
+                {}
               </div>
             </div>
           </div>
