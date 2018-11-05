@@ -6,8 +6,8 @@ const SidebarItem = props => {
   return (
     <li
       className={classnames({
-        menu__item: route !== currentRoute,
-        "active menu__item": route === currentRoute
+        "menu__item hide_sidebar": route !== currentRoute,
+        "active menu__item hide_sidebar": route === currentRoute
       })}
     >
       <a className="menu__item__text" href={route}>

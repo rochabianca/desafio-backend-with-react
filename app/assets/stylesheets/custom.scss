@@ -46,3 +46,16 @@
   background-color: $purple;
   color: $white;
 }
+
+.navbar-toggle {
+  background: $purple;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: $dark-purple !important;
+}
+
+.sidebar-wrapper {
+  background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+}

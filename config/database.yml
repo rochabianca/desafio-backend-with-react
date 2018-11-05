@@ -16,6 +16,9 @@ test:
   <<: *default
   host: <%= ENV['DATABASE_HOST'] %>
   database: agenda_mail_test
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   host: <%= ENV['DATABASE_HOST'] %>

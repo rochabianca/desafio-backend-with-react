@@ -25,3 +25,9 @@
 .content {
   padding-top: 0px !important;
 }
+
+@media screen and (max-width: 992px) {
+  .navbar-nav {
+    width: 100%;
+  }
+}
