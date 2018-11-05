@@ -19,7 +19,6 @@ export default class NewMessage extends Component {
     const currentThis = this;
 
     if (receiver_email && title && content) {
-      console.log("entrou");
       const newMessage = {
         message: {
           receiver_email,

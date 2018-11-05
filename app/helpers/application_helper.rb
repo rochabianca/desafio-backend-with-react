@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def user_messages
-    current_user.master? ? Message.master_messages.size  : current_user.messages.unread.size
+    current_user.master? ? 0  : current_user.messages.unread.size
   end
 
   def archived_count

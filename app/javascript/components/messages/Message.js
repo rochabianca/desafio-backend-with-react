@@ -4,7 +4,6 @@ import classnames from "classnames";
 
 const Message = props => {
   const { message, showReceiver } = props;
-  console.log(message);
   return (
     <a href={`/messages/${message.id}`}>
       <div
