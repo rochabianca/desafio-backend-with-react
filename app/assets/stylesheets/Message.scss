@@ -15,6 +15,10 @@
     background: $white;
     font-weight: 600;
     color: $black;
+
+    .Message__header {
+      font-weight: 600;
+    }
   }
   &:hover {
     background: #eee;
@@ -34,7 +38,7 @@
 }
 
 .Message__preview {
-  width: 40%;
+  width: 50%;
   text-align: left;
   span {
     font-weight: 300;

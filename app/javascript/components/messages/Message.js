@@ -21,7 +21,7 @@ const Message = props => {
           )}
 
           <div className="Message__preview">
-            {message.title} <span> - {message.content.substring(0, 10)}</span>
+            {message.title} <span> - {message.content.substring(0, 20)}</span>
           </div>
         </div>
         <span className="Message__date">
